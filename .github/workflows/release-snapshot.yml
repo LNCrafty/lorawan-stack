@@ -67,4 +67,4 @@ jobs:
           docker manifest push ${DOCKER_PREFIX}/lorawan-stack-dev:${{ github.sha }}
         env:
           DOCKER_CLI_EXPERIMENTAL: enabled
-          DOCKER_PREFIX: lncrafty
+          DOCKER_PREFIX: lorawan-stack
