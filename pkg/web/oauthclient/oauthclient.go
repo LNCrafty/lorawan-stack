@@ -115,6 +115,7 @@ func (oc *OAuthClient) defaultOAuthConfig(ctx context.Context) (*oauth2.Config, 
 		ClientID:     config.ClientID,
 		ClientSecret: config.ClientSecret,
 		RedirectURL:  redirectURL,
+		Scopes:       []string{"offline", "offline_access"},
 		Endpoint: oauth2.Endpoint{
 			TokenURL:  config.TokenURL,
 			AuthURL:   authorizeURL,
