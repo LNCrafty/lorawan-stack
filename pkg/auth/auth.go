@@ -102,7 +102,8 @@ func SplitToken(token string) (tokenType TokenType, id, key string, err error) {
 		}
 		if len(parts) == 2 {
 			return TokenType(parts[0]), "", parts[1], nil
-		}		
+		}
+		return "", "", "", errInvalidToken.New()
 	default:
 		return "", "", "", errInvalidToken.New()
 	}
