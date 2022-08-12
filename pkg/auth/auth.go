@@ -92,7 +92,7 @@ var errInvalidToken = errors.DefineInvalidArgument("token", "invalid token")
 // SplitToken splits the token from "<prefix>.<id>.<key>".
 func SplitToken(token string) (tokenType TokenType, id, key string, err error) {
 	parts := strings.Split(token, ".")
-	if len(parts) != 3 || len(parts) != 2 {
+	if len(parts) != 3 && len(parts) != 2 {
 		return "", "", "", errInvalidToken.New()
 	}
 	switch TokenType(parts[0]) {
